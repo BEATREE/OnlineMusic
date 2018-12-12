@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- this package is for Index Page's actions -->
+	<package name="indexPackage" extends="struts-default">
+		<action name="initAction" class="club.teenshare.actions.InitAction">
+			<result name="success">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="LoginAction" class="club.teenshare.actions.LoginAction" method="loginMethod">
+			<result name="loginSuccess">/index.jsp</result>
+			<result name="loginError">/error.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="AdminLoginAction" class="club.teenshare.actions.LoginAction" method="AdminloginMethod">
+			<result name="loginSuccess">/admin/index.jsp</result>
+			<result name="loginError">/error.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="RegisterAction" class="club.teenshare.actions.LoginAction" method="registerMethod">
+			<result name="registerError">/error.jsp</result>
+			<result name="registerSuccess" type="chain">LoginAction</result>
+		</action>
+	</package>
+	<!-- this package is for songs -->
+	<package name="songsPackage" extends="struts-default">
+		<action name="*Songs" class="club.teenshare.actions.SongsAction" method="{1}Songs">
+			<!-- 定义上传文件的类型 和保存路径-->
+			<param name="allowType">image/png,image/gif,image/jpg,image/jpeg</param>  
+            <param name="savePath">uploadFiles</param>
+			<result name="showSongs" type="chain">currentComments</result>
+			<result name="UploadSuccess" type="chain">
+				ShowMySongsUser	<!-- 显示上传的信息 -->
+			</result>
+			<result name="aUploadSuccess" type="chain">ShowSongsAdmin</result>
+			<result name="resultSongs">/results.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+	</package>
+	<!-- this package is for playlist -->
+	<package name="playlistPackage" extends="struts-default">
+		<action name="*Playlist" class="club.teenshare.actions.PlaylistAction" method="{1}Playlist">
+			<!-- 定义上传文件的类型 和保存路径-->
+			<param name="allowType">image/png,image/gif,image/jpg,image/jpeg</param>  
+            <param name="savePath">uploadFiles</param>
+            <result name="createSuccess" type="chain">ShowPlaylistAdmin</result>
+            <result name="reditSuccess" type="chain">ShowPlaylistAdmin</result>
+            <result name="showPlaylist">/playlist.jsp</result>
+            <result name="input">/error.jsp</result>
+            <result name="error">/error.jsp</result>
+		</action>
+	</package>
+	<!-- this  package is for comments -->
+	<package name="commentsPackage" extends="struts-default">
+		<action name="*Comments" class="club.teenshare.actions.CommentsAction" method="{1}Comments">
+			<result name="showComments">/songs.jsp</result>
+			<result name="submitSuccess" type="chain">currentComments</result>
+			<result name="notLogin">/error.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+	<package name="showPackage" extends="struts-default">
+		<action name="*Show" class="club.teenshare.actions.ShowAction" method="{1}Show">
+			<result name="HotList">/hotList.jsp</result>
+			<result name="allSingers">/allSingers.jsp</result>
+			<result name="singerSongs">/singerSongs.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+	<package name="userPackage" extends="struts-default">
+		<!-- 包含有用户处理action的Package -->
+		<action name="*User" class="club.teenshare.actions.UserAction" method="{1}User">
+			<result name="mySongs">/users/mySongs.jsp</result>
+			<result name="myComments">/users/myComments.jsp</result>
+			<result name="delSuccess" type="chain">ShowMySongsUser</result>
+			<result name="delComSuccess" type="chain">ShowMyCommentsUser</result>
+			<result name="reEditSong">/users/reEditSong.jsp</result>
+			<result name="logoutSuccess">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+	<package name="adminPackage" extends="struts-default">
+		<!-- 包含有用户处理action的Package -->
+		<action name="*Admin" class="club.teenshare.actions.AdminAction" method="{1}Admin">
+			<result name="allSongs">/admin/allSongs.jsp</result>
+			<result name="allComments">/admin/allComments.jsp</result>
+			<result name="allUsers">/admin/allUsers.jsp</result>
+			<result name="delSuccess" type="chain">ShowSongsAdmin</result>
+			<result name="delComSuccess" type="chain">ShowCommentsAdmin</result>
+			<result name="reEditSong">/admin/reEditSong.jsp</result>
+			<result name="reEditPlaylist">/admin/reEditPlaylist.jsp</result>
+			<result name="allPlaylist">/admin/allPlaylist.jsp</result>
+			<result name="delPlaylist" type="chain">ShowPlaylistAdmin</result>
+			<result name="logoutSuccess">/index.jsp</result>
+			<result name="error">/error.jsp</result>
+			<result name="input">/error.jsp</result>
+		</action>
+	</package>
+</struts>    

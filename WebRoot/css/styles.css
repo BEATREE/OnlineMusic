@@ -1,0 +1,164 @@
+@CHARSET "UTF-8";
+*{
+	transition:all .36s;
+}
+body{
+	background:#34495e;
+}
+div{
+	display:block;
+	/* border:1px solid red; */
+}
+ul{
+	list-style: none;
+}
+/*清除掉bootstrap中的row属性*/
+.row{
+	margin-right: 0px;
+	margin-left: 0px;
+}
+/*定义导航部分css*/
+.navbar{
+	margin-bottom:5px;
+}
+.carousel-item img{
+	height: 336px;	
+}
+/*定义主题部分CSS*/
+.container{
+	padding:0px;
+}
+.leftPart{
+	width:72%;
+	float:left;
+	background-color:#ffffff;
+	border:1px solid black;
+}
+/*中间li中的样式*/
+.bigPart{
+	width: 100%;
+	border-radius:6px;
+	background: #f5f5f5;
+	margin-bottom: 12px;
+}
+.bigPart h4{
+	width:96%;
+	margin-left:2%;
+	border-bottom: 2px solid #c10d0c;
+}
+.bigPart h4:BEFORE{
+	content: "#";
+	color: red;
+	margin:0 12px 0 12px;
+	font-weight: bold;
+}
+.bigPart ul{
+	display:block;
+	width:100%;
+	margin-top:22px;
+	text-align: left;
+	float:left;
+}
+.bigPart ul li{
+	float:left;
+	width:30%;
+	height:220px;
+	margin-bottom:60px;
+	margin-right:2%;
+	/* border:1px solid green; */
+}
+.bigPart ul li:hover img{
+	box-shadow: 0 0 8px #34495e;
+}
+/*歌曲列表*/
+.split-part ul li{
+	margin:0 auto;
+	width:95%;
+	height:32px;
+	margin-left: -11px;
+	padding-left:12px;
+	margin-bottom:2px;
+	border:1px solid green;
+	border-radius: 5px;
+}
+
+.split-part ul li:HOVER{
+	margin-left: -6px;
+	box-shadow: 0 0 5px #34495e;
+}
+/*li中的样式*/
+.repImg{
+	width: 100%;
+	height:220px;
+	border-radius:6px;
+}
+li >div{
+	height: 28px;
+}
+
+/*右侧部分CSS*/
+.rightPart{
+	margin-left:1%;
+	background-color:#ffffff;
+	width:27%;
+	float:left;
+	border-bottom-left-radius:6px;
+	border-bottom-right-radius:6px;
+	border:1px solid green;
+}
+.rightPart > div{
+	padding:5px;
+}
+/*歌曲专题页面*/
+.listDesc{
+	padding:22px 5px 6px 12px;
+}
+.listDesc img{
+	border-radius: 6px;
+}
+/*发光UL*/
+.lightUl{
+	margin-top:36px;
+	list-style: none;
+}
+.lightUl li{
+	display:inline-block;
+	float:center;
+	position:relative;
+	text-align:center;
+	width:30%;
+	height:220px;
+	margin-left:2%;
+	margin-top:16px;
+	box-shadow:2px 2px 10px #AAA;
+	border-radius:8px;
+}
+.lightUl li h2{
+	font-family:"华文新魏";
+	margin-top:95px;
+	line-height:30px;
+	color:white;
+}
+.lightUl li:HOVER h2{
+	font-size: 66px;
+	color:#25c6fc;
+}
+.lightUl li:HOVER{
+	box-shadow:2px 2px 10px #15cfdb;
+}
+/*评论box*/
+.commentsBox{
+	width:100%;
+	border-bottom:1px dashed black;
+}
+.commentsBox:HOVER{
+	margin-left:3px;
+}
+.leftCom{
+	padding-left:22px;
+}
+/*脚部css*/
+.footer{
+	border-top: 2px #01aea5 solid;
+	bottom: 0;
+}

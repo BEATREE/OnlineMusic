@@ -1,0 +1,20 @@
+#MyEclipse Hibernate Properties
+#Tue Dec 04 17:05:01 CST 2018
+genBasicCompId=false
+sessionFactoryName=club.teenshare.dao.HibernateSessionFactory
+profile=
+daoSFId=
+jndiPath=
+detectM2M=true
+reStrategyClass=
+detectO2O=true
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+genAnnotations=false
+reSettingsFile=
+configFile=/OnlineMusic/src/hibernate.cfg.xml
+createConfigFile=true
